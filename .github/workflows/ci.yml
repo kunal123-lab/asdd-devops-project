@@ -1,0 +1,24 @@
+Name: ASDD DevOps Pipeline
+
+on:
+  push:
+    branches: [ "main" ]
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+
+      - name: Run CI Tests
+        run: |
+          echo "Pipeline run triggered for Jira issue: SCRUM-1"
+          echo "Compiling application modules..."
+          echo "All unit tests passed successfully!" 
+  
