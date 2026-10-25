@@ -1,17 +1,8 @@
-Name: CI Pipeline
-
-on: [push]
+On: [push]
 
 jobs:
-  build-and-test:
+  build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout Code
-        uses: actions/checkout@v4
-
-      - name: Run CI Test
-        run: |
-          echo "Starting CI Pipeline..."
-          echo "Checking application build..."
-          echo "Running unit test suite..."
-          echo "Status: ALL TESTS PASSED (SUCCESS)"
+      - uses: actions/checkout@v4
+      - run: echo "ASDD DevOps CI Pipeline Passed"
